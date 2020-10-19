@@ -1,0 +1,64 @@
+CREATE DATABASE autos;
+USE autos;
+CREATE TABLE coches (id_coche INTEGER PRIMARY KEY AUTO_INCREMENT,
+	VIN VARCHAR(50),
+	fabricante VARCHAR(50),
+	modelo VARCHAR(50),
+	año VARCHAR(50),
+	color VARCHAR(50)
+);
+create table clientes (id_cliente INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(50),
+	celular INTEGER,
+	email VARCHAR(50),
+	direccion VARCHAR(50),
+	city VARCHAR(50),
+	estado VARCHAR(50),
+	pais VARCHAR(50),
+	postal INTEGER);
+CREATE TABLE vendedores (id_vendedor INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(50),
+	tienda VARCHAR(50));
+CREATE TABLE facturas (id_factura INTEGER PRIMARY KEY AUTO_INCREMENT,
+	fecha DATETIME,
+	id_coche INTEGER,
+    id_cliente INTEGER,
+    id_vendedor INTEGER);
+
+INSERT INTO coches VALUES (0, '3K096I98581DHSNUP', 'Volkswagen', 'Tiguan', 2019, 'Blue');
+INSERT INTO coches VALUES (1, 'ZM8G7BEUQZ97IH46V', 'Peugeot',	'Rifter', 2019, 'Red');
+INSERT INTO coches VALUES (2, 'RKXVNNIHLVVZOUB4M', 'Ford', 'Fusion', 2018, 'White');
+INSERT INTO coches VALUES (3,' HKNDGS7CU31E9Z7JW', 'Toyota', 'RAV4', 2018, 'Silver');
+INSERT INTO coches VALUES (4, 'DAM41UDN3CHU2WVF6', 'Volvo', 'V60', 2019, 'Gray');
+INSERT INTO coches VALUES (5, 'DAM41UDN3CHU2WVF6', 'Volvo','V60 Cross Country',	2019, 'Gray');
+
+
+INSERT INTO clientes VALUES (10001,' Pablo Picasso', 
+346361763, 'erere@.com', 'Paseo de la Chopera 14', 
+'Madrid', 'Madrid', 'Spain', 28045);
+INSERT INTO clientes VALUES (20001,' Abraham Lincoln', 
+305907, 'ejasdhjas@.com', '120 SW 8th St', 
+'Miami', 'Florida', 'United States', 33130);
+INSERT INTO clientes VALUES (30001,'Napoléon Bonaparte', 
+331797540, 'ajsdhjas@.com', '120 SW 8th St', 
+'Paris', 'Île-de-France', 'France', 75008);
+
+INSERT INTO vendedores VALUES (00002, 'Anna Sthesia',' Barcelona');
+INSERT INTO vendedores VALUES (00003, 'Paul Molive', 'Berlin');
+INSERT INTO vendedores VALUES (00004, 'Gail Forcewind', 'Paris');
+INSERT INTO vendedores VALUES (00005, 'Paige Turner', 'Mimia');
+INSERT INTO vendedores VALUES (00006, 'Bob Frapples', 'Mexico City');
+INSERT INTO vendedores VALUES (00007, 'Walter Melon', 'Amsterdam');
+INSERT INTO vendedores VALUES (00008, 'Shonda Leer', 'São Paulo');
+
+INSERT INTO facturas VALUES (852399038,	'2018-08-22', 0, 1, 3);
+INSERT INTO facturas VALUES (731166526,	'2018-12-31',	3, 0, 5);
+INSERT INTO facturas VALUES (271135104, '2019-01-22',	2, 2, 7);
+
+UPDATE vendedores SET tienda = 'Miami' WHERE id_vendedor = 5;
+
+UPDATE clientes SET email = 'ppicasso@gmail.com' WHERE id_cliente = 10001;
+UPDATE clientes SET email = 'lincoln@us.gov' WHERE id_cliente = 20001;
+UPDATE clientes SET email = 'hello@napoleon.me' WHERE id_cliente = 30001;
+
+
