@@ -1,0 +1,2278 @@
+
+
+
+
+Reinforcement learning - Wikipedia
+document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"f60120f2-5d8a-4052-96df-f21d6c5ef48e","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Reinforcement_learning","wgTitle":"Reinforcement learning","wgCurRevisionId":985770110,"wgRevisionId":985770110,"wgArticleId":66294,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Webarchive template wayback links","Wikipedia articles needing clarification from July 2018","Wikipedia articles needing clarification from January 2020","Reinforcement learning","Markov models","Belief revision"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext",
+"wgRelevantPageName":"Reinforcement_learning","wgRelevantArticleId":66294,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage","wgWikibaseItemId":"Q830687"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.math.styles":"ready",
+"skins.vector.styles.legacy":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","ext.math.scripts","ext.scribunto.logs","site","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","skins.vector.legacy.js","ext.gadget.ReferenceTooltips","ext.gadget.charinsert","ext.gadget.extra-toolbar-buttons","ext.gadget.refToolbar","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"];
+(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reinforcement learning
+
+From Wikipedia, the free encyclopedia
+
+
+
+Jump to navigation
+Jump to search
+For reinforcement learning in psychology, see Reinforcement and Operant conditioning.
+Part of a series onMachine learninganddata mining
+Problems
+Classification
+Clustering
+Regression
+Anomaly detection
+AutoML
+Association rules
+Reinforcement learning
+Structured prediction
+Feature engineering
+Feature learning
+Online learning
+Semi-supervised learning
+Unsupervised learning
+Learning to rank
+Grammar induction
+
+
+Supervised learning.mw-parser-output .nobold{font-weight:normal}(classification • regression) 
+Decision trees
+Ensembles
+Bagging
+Boosting
+Random forest
+k-NN
+Linear regression
+Naive Bayes
+Artificial neural networks
+Logistic regression
+Perceptron
+Relevance vector machine (RVM)
+Support vector machine (SVM)
+
+
+Clustering
+BIRCH
+CURE
+Hierarchical
+k-means
+Expectation–maximization (EM)
+DBSCAN
+OPTICS
+Mean-shift
+
+
+Dimensionality reduction
+Factor analysis
+CCA
+ICA
+LDA
+NMF
+PCA
+PGD
+t-SNE
+
+
+Structured prediction
+Graphical models
+Bayes net
+Conditional random field
+Hidden Markov
+
+
+Anomaly detection
+k-NN
+Local outlier factor
+
+
+Artificial neural network
+Autoencoder
+Deep learning
+DeepDream
+Multilayer perceptron
+RNN
+LSTM
+GRU
+ESN
+Restricted Boltzmann machine
+GAN
+SOM
+Convolutional neural network
+U-Net
+Transformer
+
+
+Reinforcement learning
+Q-learning
+SARSA
+Temporal difference (TD)
+
+
+Theory
+Bias–variance dilemma
+Computational learning theory
+Empirical risk minimization
+Occam learning
+PAC learning
+Statistical learning
+VC theory
+
+
+Machine-learning venues
+NeurIPS
+ICML
+ML
+JMLR
+ArXiv:cs.LG
+
+
+Glossary of artificial intelligence
+Glossary of artificial intelligence
+
+
+Related articles
+List of datasets for machine-learning research
+Outline of machine learning
+
+vte
+Reinforcement learning (RL) is an area of machine learning concerned with how software agents ought to take actions in an environment in order to maximize the notion of cumulative reward. Reinforcement learning is one of three basic machine learning paradigms, alongside supervised learning and unsupervised learning.
+Reinforcement learning differs from supervised learning in not needing labelled input/output pairs be presented, and in not needing sub-optimal actions to be explicitly corrected. Instead the focus is on finding a balance between exploration (of uncharted territory) and exploitation (of current knowledge).[1]
+
+The environment is typically stated in the form of a Markov decision process (MDP), because many reinforcement learning algorithms for this context use dynamic programming techniques.[2] The main difference between the classical dynamic programming methods  and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the MDP and they target large MDPs where exact methods become infeasible..mw-parser-output .toclimit-2 .toclevel-1 ul,.mw-parser-output .toclimit-3 .toclevel-2 ul,.mw-parser-output .toclimit-4 .toclevel-3 ul,.mw-parser-output .toclimit-5 .toclevel-4 ul,.mw-parser-output .toclimit-6 .toclevel-5 ul,.mw-parser-output .toclimit-7 .toclevel-6 ul{display:none}Contents
+
+1 Introduction
+2 Exploration
+3 Algorithms for control learning
+
+3.1 Criterion of optimality
+
+3.1.1 Policy
+3.1.2 State-value function
+
+
+3.2 Brute force
+3.3 Value function
+
+3.3.1 Monte Carlo methods
+3.3.2 Temporal difference methods
+
+
+3.4 Direct policy search
+
+
+4 Theory
+5 Research
+6 Comparison of reinforcement learning algorithms
+
+6.1 Deep reinforcement learning
+6.2 Inverse reinforcement learning
+6.3 Safe Reinforcement Learning
+
+
+7 See also
+8 References
+9 Further reading
+10 External links
+
+
+
+Introduction[edit]
+ The typical framing of a Reinforcement Learning (RL) scenario: an agent takes actions in an environment, which is interpreted into a reward and a representation of the state, which are fed back into the agent.
+Due to its generality, reinforcement learning is studied in many disciplines, such as game theory, control theory, operations research, information theory, simulation-based optimization, multi-agent systems, swarm intelligence, and statistics. In the operations research and control literature, reinforcement learning is called approximate dynamic programming, or neuro-dynamic programming. The problems of interest in reinforcement learning have also been studied in the theory of optimal control, which is concerned mostly with the existence and characterization of optimal solutions, and algorithms for their exact computation, and less with learning or approximation, particularly in the absence of a mathematical model of the environment. In economics and game theory, reinforcement learning may be used to explain how equilibrium may arise under bounded rationality.
+Basic reinforcement is modeled as a Markov decision process (MDP):
+
+a set of environment and agent states, S;
+a set of actions, A, of the agent;
+
+
+
+
+
+P
+
+a
+
+
+(
+s
+,
+
+s
+′
+
+)
+=
+Pr
+(
+
+s
+
+t
++
+1
+
+
+=
+
+s
+′
+
+∣
+
+s
+
+t
+
+
+=
+s
+,
+
+a
+
+t
+
+
+=
+a
+)
+
+
+{\displaystyle P_{a}(s,s')=\Pr(s_{t+1}=s'\mid s_{t}=s,a_{t}=a)}
+
+ is the probability of transition (at time 
+
+
+
+t
+
+
+{\displaystyle t}
+
+) from state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+ to state 
+
+
+
+
+s
+′
+
+
+
+{\displaystyle s'}
+
+ under action 
+
+
+
+a
+
+
+{\displaystyle a}
+
+.
+
+
+
+
+
+R
+
+a
+
+
+(
+s
+,
+
+s
+′
+
+)
+
+
+{\displaystyle R_{a}(s,s')}
+
+ is the immediate reward after transition from 
+
+
+
+s
+
+
+{\displaystyle s}
+
+ to 
+
+
+
+
+s
+′
+
+
+
+{\displaystyle s'}
+
+ with action 
+
+
+
+a
+
+
+{\displaystyle a}
+
+.
+A reinforcement learning agent interacts with its environment in discrete time steps. At each time t, the agent receives the current state 
+
+
+
+
+s
+
+t
+
+
+
+
+{\displaystyle s_{t}}
+
+ and reward 
+
+
+
+
+r
+
+t
+
+
+
+
+{\displaystyle r_{t}}
+
+. It then chooses an action 
+
+
+
+
+a
+
+t
+
+
+
+
+{\displaystyle a_{t}}
+
+ from the set of available actions, which is subsequently sent to the environment. The environment moves to a new state 
+
+
+
+
+s
+
+t
++
+1
+
+
+
+
+{\displaystyle s_{t+1}}
+
+ and the reward 
+
+
+
+
+r
+
+t
++
+1
+
+
+
+
+{\displaystyle r_{t+1}}
+
+ associated with the transition 
+
+
+
+(
+
+s
+
+t
+
+
+,
+
+a
+
+t
+
+
+,
+
+s
+
+t
++
+1
+
+
+)
+
+
+{\displaystyle (s_{t},a_{t},s_{t+1})}
+
+ is determined. The goal of a reinforcement learning agent is to learn a policy: 
+
+
+
+π
+:
+A
+×
+S
+→
+[
+0
+,
+1
+]
+
+
+{\displaystyle \pi :A\times S\rightarrow [0,1]}
+
+, 
+
+
+
+π
+(
+a
+,
+s
+)
+=
+Pr
+(
+
+a
+
+t
+
+
+=
+a
+∣
+
+s
+
+t
+
+
+=
+s
+)
+
+
+{\displaystyle \pi (a,s)=\Pr(a_{t}=a\mid s_{t}=s)}
+
+ which maximizes the expected cumulative reward.
+Formulating the problem as a MDP assumes the agent directly observes the current environmental state; in this case the problem is said to have full observability. If the agent only has access to a subset of states, or if the observed states are corrupted by noise, the agent is said to have partial observability, and formally the problem must be formulated as a Partially observable Markov decision process. In both cases, the set of actions available to the agent can be restricted. For example, the state of an account balance could be restricted to be positive; if the current value of the state is 3 and the state transition attempts to reduce the value by 4, the transition will not be allowed.
+When the agent's performance is compared to that of an agent that acts optimally, the difference in performance gives rise to the notion of regret. In order to act near optimally, the agent must reason about the long-term consequences of its actions (i.e., maximize future income), although the immediate reward associated with this might be negative.
+Thus, reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. It has been applied successfully to various problems, including robot control, elevator scheduling, telecommunications, backgammon, checkers[3] and Go (AlphaGo).
+Two elements make reinforcement learning powerful: the use of samples to optimize performance and the use of function approximation to deal with large environments. Thanks to these two key components, reinforcement learning can be used in large environments in the following situations:
+
+A model of the environment is known, but an analytic solution is not available;
+Only a simulation model of the environment is given (the subject of simulation-based optimization);[4]
+The only way to collect information about the environment is to interact with it.
+The first two of these problems could be considered planning problems (since some form of model is available), while the last one could be considered to be a genuine learning problem. However, reinforcement learning converts both planning problems to machine learning problems.
+
+Exploration[edit]
+The exploration vs. exploitation trade-off has been most thoroughly studied through the multi-armed bandit problem and for finite state space MDPs in Burnetas and Katehakis (1997).[5]
+Reinforcement learning requires clever exploration mechanisms; randomly selecting actions, without reference to an estimated probability distribution, shows poor performance. The case of (small) finite Markov decision processes is relatively well understood. However, due to the lack of algorithms that scale well with the number of states (or scale to problems with infinite state spaces), simple exploration methods are the most practical.
+One such method is 
+
+
+
+ε
+
+
+{\displaystyle \varepsilon }
+
+-greedy, where 
+
+
+
+0
+<
+ε
+<
+1
+
+
+{\displaystyle 0<\varepsilon <1}
+
+ is a parameter controlling the amount of exploration vs. exploitation.  With probability 
+
+
+
+1
+−
+ε
+
+
+{\displaystyle 1-\varepsilon }
+
+, exploitation is chosen, and the agent chooses the action that it believes has the best long-term effect (ties between actions are broken uniformly at random). Alternatively, with probability 
+
+
+
+ε
+
+
+{\displaystyle \varepsilon }
+
+, exploration is chosen, and the action is chosen uniformly at random. 
+
+
+
+ε
+
+
+{\displaystyle \varepsilon }
+
+ is usually a fixed parameter but can be adjusted either according to a schedule (making the agent explore progressively less), or adaptively based on heuristics.[6]
+
+Algorithms for control learning[edit]
+Even if the issue of exploration is disregarded and even if the state was observable (assumed hereafter), the problem remains to use past experience to find out which actions lead to higher cumulative rewards.
+
+Criterion of optimality[edit]
+Policy[edit]
+The agent's action selection is modeled as a map called policy:
+
+
+
+
+
+π
+:
+A
+×
+S
+→
+[
+0
+,
+1
+]
+
+
+{\displaystyle \pi :A\times S\rightarrow [0,1]}
+
+
+
+
+
+
+π
+(
+a
+,
+s
+)
+=
+Pr
+(
+
+a
+
+t
+
+
+=
+a
+∣
+
+s
+
+t
+
+
+=
+s
+)
+
+
+{\displaystyle \pi (a,s)=\Pr(a_{t}=a\mid s_{t}=s)}
+
+
+The policy map gives the probability of taking action 
+
+
+
+a
+
+
+{\displaystyle a}
+
+ when in state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+.[7]:61 There are also non-probabilistic policies.
+
+State-value function[edit]
+Value function 
+
+
+
+
+V
+
+π
+
+
+(
+s
+)
+
+
+{\displaystyle V_{\pi }(s)}
+
+ is defined as the expected return starting with state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+, i.e. 
+
+
+
+
+s
+
+0
+
+
+=
+s
+
+
+{\displaystyle s_{0}=s}
+
+, and successively following policy 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+. Hence, roughly speaking, the value function estimates "how good" it is to be in a given state.[7]:60
+
+
+
+
+
+
+V
+
+π
+
+
+(
+s
+)
+=
+E
+⁡
+[
+R
+]
+=
+E
+⁡
+
+[
+
+
+∑
+
+t
+=
+0
+
+
+∞
+
+
+
+γ
+
+t
+
+
+
+r
+
+t
+
+
+∣
+
+s
+
+0
+
+
+=
+s
+
+]
+
+,
+
+
+{\displaystyle V_{\pi }(s)=\operatorname {E} [R]=\operatorname {E} \left[\sum _{t=0}^{\infty }\gamma ^{t}r_{t}\mid s_{0}=s\right],}
+
+
+where the random variable 
+
+
+
+R
+
+
+{\displaystyle R}
+
+ denotes the return, and is defined as the sum of future discounted rewards (gamma is less than 1, as a particular state becomes older, its effect on the later states becomes less and less. Thus, we discount its effect).
+
+
+
+
+
+R
+=
+
+∑
+
+t
+=
+0
+
+
+∞
+
+
+
+γ
+
+t
+
+
+
+r
+
+t
+
+
+,
+
+
+{\displaystyle R=\sum _{t=0}^{\infty }\gamma ^{t}r_{t},}
+
+
+where 
+
+
+
+
+r
+
+t
+
+
+
+
+{\displaystyle r_{t}}
+
+ is the reward at step 
+
+
+
+t
+
+
+{\displaystyle t}
+
+, 
+
+
+
+γ
+∈
+[
+0
+,
+1
+)
+
+
+{\displaystyle \gamma \in [0,1)}
+
+ is the discount-rate.
+The algorithm must find a policy with maximum expected return. From the theory of MDPs it is known that, without loss of generality, the search can be restricted to the set of so-called stationary policies. A policy is stationary if the action-distribution returned by it depends only on the last state visited (from the observation agent's history). The search can be further restricted to deterministic stationary policies. A deterministic stationary policy deterministically selects actions based on the current state. Since any such policy can be identified with a mapping from the set of states to the set of actions, these policies can be identified with such mappings with no loss of generality.
+
+Brute force[edit]
+The brute force approach entails two steps:
+
+For each possible policy, sample returns while following it
+Choose the policy with the largest expected return
+One problem with this is that the number of policies can be large, or even infinite. Another is that variance of the returns may be large, which requires many samples to accurately estimate the return of each policy.
+These problems can be ameliorated if we assume some structure and allow samples generated from one policy to influence the estimates made for others. The two main approaches for achieving this are value function estimation and direct policy search.
+
+Value function[edit]
+See also: Value function
+Value function approaches attempt to find a policy that maximizes the return by maintaining a set of estimates of expected returns for some policy (usually either the "current" [on-policy] or the optimal [off-policy] one).
+These methods rely on the theory of MDPs, where optimality is defined in a sense that is stronger than the above one: A policy is called optimal if it achieves the best expected return from any initial state (i.e., initial distributions play no role in this definition). Again, an optimal policy can always be found amongst stationary policies.
+To define optimality in a formal manner, define the value of a policy 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+ by
+
+
+
+
+
+
+V
+
+π
+
+
+(
+s
+)
+=
+E
+[
+R
+∣
+s
+,
+π
+]
+,
+
+
+{\displaystyle V^{\pi }(s)=E[R\mid s,\pi ],}
+
+
+where 
+
+
+
+R
+
+
+{\displaystyle R}
+
+ stands for the return associated with following 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+ from the initial state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+. Defining 
+
+
+
+
+V
+
+∗
+
+
+(
+s
+)
+
+
+{\displaystyle V^{*}(s)}
+
+ as the maximum possible value of 
+
+
+
+
+V
+
+π
+
+
+(
+s
+)
+
+
+{\displaystyle V^{\pi }(s)}
+
+, where 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+ is allowed to change,
+
+
+
+
+
+
+V
+
+∗
+
+
+(
+s
+)
+=
+
+max
+
+π
+
+
+
+V
+
+π
+
+
+(
+s
+)
+.
+
+
+{\displaystyle V^{*}(s)=\max _{\pi }V^{\pi }(s).}
+
+
+A policy that achieves these optimal values in each state is called optimal. Clearly, a policy that is optimal in this strong sense is also optimal in the sense that it maximizes the expected return 
+
+
+
+
+ρ
+
+π
+
+
+
+
+{\displaystyle \rho ^{\pi }}
+
+, since 
+
+
+
+
+ρ
+
+π
+
+
+=
+E
+[
+
+V
+
+π
+
+
+(
+S
+)
+]
+
+
+{\displaystyle \rho ^{\pi }=E[V^{\pi }(S)]}
+
+, where 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ is a state randomly sampled from the distribution 
+
+
+
+μ
+
+
+{\displaystyle \mu }
+
+[clarification needed].
+Although state-values suffice to define optimality, it is useful to define action-values. Given a state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+, an action 
+
+
+
+a
+
+
+{\displaystyle a}
+
+ and a policy 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+, the action-value of the pair 
+
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle (s,a)}
+
+ under 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+ is defined by
+
+
+
+
+
+
+Q
+
+π
+
+
+(
+s
+,
+a
+)
+=
+E
+⁡
+[
+R
+∣
+s
+,
+a
+,
+π
+]
+,
+
+
+
+{\displaystyle Q^{\pi }(s,a)=\operatorname {E} [R\mid s,a,\pi ],\,}
+
+
+where 
+
+
+
+R
+
+
+{\displaystyle R}
+
+ now stands for the random return associated with first taking action 
+
+
+
+a
+
+
+{\displaystyle a}
+
+ in state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+ and following 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+, thereafter.
+The theory of MDPs states that if 
+
+
+
+
+π
+
+∗
+
+
+
+
+{\displaystyle \pi ^{*}}
+
+ is an optimal policy, we act optimally (take the optimal action) by choosing the action from 
+
+
+
+
+Q
+
+
+π
+
+∗
+
+
+
+
+(
+s
+,
+⋅
+)
+
+
+{\displaystyle Q^{\pi ^{*}}(s,\cdot )}
+
+ with the highest value at each state, 
+
+
+
+s
+
+
+{\displaystyle s}
+
+. The action-value function of such an optimal policy (
+
+
+
+
+Q
+
+
+π
+
+∗
+
+
+
+
+
+
+{\displaystyle Q^{\pi ^{*}}}
+
+) is called the optimal action-value function and is commonly denoted by 
+
+
+
+
+Q
+
+∗
+
+
+
+
+{\displaystyle Q^{*}}
+
+. In summary, the knowledge of the optimal action-value function alone suffices to know how to act optimally.
+Assuming full knowledge of the MDP, the two basic approaches to compute the optimal action-value function are value iteration and policy iteration. Both algorithms compute a sequence of functions 
+
+
+
+
+Q
+
+k
+
+
+
+
+{\displaystyle Q_{k}}
+
+ (
+
+
+
+k
+=
+0
+,
+1
+,
+2
+,
+…
+
+
+{\displaystyle k=0,1,2,\ldots }
+
+) that converge to 
+
+
+
+
+Q
+
+∗
+
+
+
+
+{\displaystyle Q^{*}}
+
+. Computing these functions involves computing expectations over the whole state-space, which is impractical for all but the smallest (finite) MDPs. In reinforcement learning methods, expectations are approximated by averaging over samples and using function approximation techniques to cope with the need to represent value functions over large state-action spaces.
+
+Monte Carlo methods[edit]
+Monte Carlo methods can be used in an algorithm that mimics policy iteration. Policy iteration consists of two steps: policy evaluation and policy improvement.
+Monte Carlo is used in the policy evaluation step. In this step, given a stationary, deterministic policy 
+
+
+
+π
+
+
+{\displaystyle \pi }
+
+, the goal is to compute the function values 
+
+
+
+
+Q
+
+π
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle Q^{\pi }(s,a)}
+
+ (or a good approximation to them) for all state-action pairs 
+
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle (s,a)}
+
+. Assuming (for simplicity) that the MDP is finite, that sufficient memory is available to accommodate the action-values and that the problem is episodic and after each episode a new one starts from some random initial state. Then, the estimate of the value of a given state-action pair 
+
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle (s,a)}
+
+ can be computed by averaging the sampled returns that originated from 
+
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle (s,a)}
+
+ over time.  Given sufficient time, this procedure can thus construct a precise estimate 
+
+
+
+Q
+
+
+{\displaystyle Q}
+
+ of the action-value function 
+
+
+
+
+Q
+
+π
+
+
+
+
+{\displaystyle Q^{\pi }}
+
+. This finishes the description of the policy evaluation step.
+In the policy improvement step, the next policy is obtained by computing a greedy policy with respect to 
+
+
+
+Q
+
+
+{\displaystyle Q}
+
+: Given a state 
+
+
+
+s
+
+
+{\displaystyle s}
+
+, this new policy returns an action that maximizes 
+
+
+
+Q
+(
+s
+,
+⋅
+)
+
+
+{\displaystyle Q(s,\cdot )}
+
+. In practice lazy evaluation can defer the computation of the maximizing actions to when they are needed.
+Problems with this procedure include:
+
+The procedure may spend too much time evaluating a suboptimal policy.
+It uses samples inefficiently in that a long trajectory improves the estimate only of the single state-action pair that started the trajectory.
+When the returns along the trajectories have high variance, convergence is slow.
+It works in episodic problems only;
+It works in small, finite MDPs only.
+Temporal difference methods[edit]
+Main article: Temporal difference learning
+The first problem is corrected by allowing the procedure to change the policy (at some or all states) before the values settle. This too may be problematic as it might prevent convergence. Most current algorithms do this, giving rise to the class of generalized policy iteration algorithms. Many actor critic methods belong to this category.
+The second issue can be corrected by allowing trajectories to contribute to any state-action pair in them. This may also help to some extent with the third problem, although a better solution when returns have high variance is Sutton's temporal difference (TD) methods that are based on the recursive Bellman equation.[8][9] The computation in TD methods can be incremental (when after each transition the memory is changed and the transition is thrown away), or batch (when the transitions are batched and the estimates are computed once based on the batch). Batch methods, such as the least-squares temporal difference method,[10] may use the information in the samples better, while incremental methods are the only choice when batch methods are infeasible due to their high computational or memory complexity. Some methods try to combine the two approaches. Methods based on temporal differences also overcome the fourth issue.
+In order to address the fifth issue, function approximation methods are used. Linear function approximation starts with a mapping 
+
+
+
+ϕ
+
+
+{\displaystyle \phi }
+
+ that assigns a finite-dimensional vector to each state-action pair. Then, the action values of a state-action pair 
+
+
+
+(
+s
+,
+a
+)
+
+
+{\displaystyle (s,a)}
+
+ are obtained by linearly combining the components of 
+
+
+
+ϕ
+(
+s
+,
+a
+)
+
+
+{\displaystyle \phi (s,a)}
+
+ with some weights 
+
+
+
+θ
+
+
+{\displaystyle \theta }
+
+:
+
+
+
+
+
+Q
+(
+s
+,
+a
+)
+=
+
+∑
+
+i
+=
+1
+
+
+d
+
+
+
+θ
+
+i
+
+
+
+ϕ
+
+i
+
+
+(
+s
+,
+a
+)
+.
+
+
+{\displaystyle Q(s,a)=\sum _{i=1}^{d}\theta _{i}\phi _{i}(s,a).}
+
+
+The algorithms then adjust the weights, instead of adjusting the values associated with the individual state-action pairs. Methods based on ideas from nonparametric statistics (which can be seen to construct their own features) have been explored.
+Value iteration can also be used as a starting point, giving rise to the Q-learning algorithm and its many variants.[11]
+The problem with using action-values is that they may need highly precise estimates of the competing action values that can be hard to obtain when the returns are noisy, though this problem is mitigated to some extent by temporal difference methods. Using the so-called compatible function approximation method compromises generality and efficiency. Another problem specific to TD comes from their reliance on the recursive Bellman equation. Most TD methods have a so-called 
+
+
+
+λ
+
+
+{\displaystyle \lambda }
+
+ parameter 
+
+
+
+(
+0
+≤
+λ
+≤
+1
+)
+
+
+{\displaystyle (0\leq \lambda \leq 1)}
+
+ that can continuously interpolate between Monte Carlo methods that do not rely on the Bellman equations and the basic TD methods that rely entirely on the Bellman equations. This can be effective in palliating this issue.
+
+Direct policy search[edit]
+An alternative method is to search directly in (some subset of) the policy space, in which case the problem becomes a case of stochastic optimization. The two approaches available are gradient-based and gradient-free methods.
+Gradient-based methods (policy gradient methods) start with a mapping from a finite-dimensional (parameter) space to the space of policies: given the parameter vector 
+
+
+
+θ
+
+
+{\displaystyle \theta }
+
+, let 
+
+
+
+
+π
+
+θ
+
+
+
+
+{\displaystyle \pi _{\theta }}
+
+ denote the policy associated to 
+
+
+
+θ
+
+
+{\displaystyle \theta }
+
+. Defining the performance function by
+
+
+
+
+
+ρ
+(
+θ
+)
+=
+
+ρ
+
+
+π
+
+θ
+
+
+
+
+,
+
+
+{\displaystyle \rho (\theta )=\rho ^{\pi _{\theta }},}
+
+
+under mild conditions this function will be differentiable as a function of the parameter vector 
+
+
+
+θ
+
+
+{\displaystyle \theta }
+
+. If the gradient of 
+
+
+
+ρ
+
+
+{\displaystyle \rho }
+
+ was known, one could use gradient ascent. Since an analytic expression for the gradient is not available, only a noisy estimate is available. Such an estimate can be constructed in many ways, giving rise to algorithms such as Williams' REINFORCE method[12] (which is known as the likelihood ratio method in the simulation-based optimization literature).[13] Policy search methods have been used in the robotics context.[14] Many policy search methods may get stuck in local optima (as they are based on local search).
+A large class of methods avoids relying on gradient information. These include simulated annealing, cross-entropy search or methods of evolutionary computation. Many gradient-free methods can achieve (in theory and in the limit) a global optimum.
+Policy search methods may converge slowly given noisy data. For example, this happens in episodic problems when the trajectories are long and the variance of the returns is large. Value-function based methods that rely on temporal differences might help in this case. In recent years, actor–critic methods have been proposed and performed well on various problems.[15]
+
+Theory[edit]
+Both the asymptotic and finite-sample behavior of most algorithms is well understood. Algorithms with provably good online performance (addressing the exploration issue) are known.
+Efficient exploration of MDPs is given in  Burnetas and Katehakis (1997).[5] Finite-time performance bounds have also appeared for many algorithms, but these bounds are expected to be rather loose and thus more work is needed to better understand the relative advantages and limitations.
+For incremental algorithms, asymptotic convergence issues have been settled[clarification needed]. Temporal-difference-based algorithms converge under a wider set of conditions than was previously possible (for example, when used with arbitrary, smooth function approximation).
+
+Research[edit]
+Research topics include 
+
+adaptive methods that work with fewer (or no) parameters under a large number of conditions
+addressing the exploration problem in large MDPs
+combinations with logic-based frameworks[16]
+large-scale empirical evaluations
+learning and acting under partial information (e.g., using predictive state representation)
+modular and hierarchical reinforcement learning[17]
+improving existing value-function and policy search methods
+algorithms that work well with large (or continuous) action spaces
+transfer learning[18]
+lifelong learning
+efficient sample-based planning (e.g., based on Monte Carlo tree search).
+bug detection in software projects[19]
+Intrinsic motivation which differentiates information-seeking, curiosity-type behaviours from task-dependent goal-directed behaviours (typically) by introducing a reward function based on maximising novel information[20][21][22]
+Cognitive modeling using reinforcement learning has been actively pursued in computational psychology [23]
+Multiagent or distributed reinforcement learning is a topic of interest. Applications are expanding.[24]
+Actor-critic reinforcement learning
+Reinforcement learning algorithms such as TD learning are under investigation as a model for dopamine-based learning in the brain. In this model, the dopaminergic projections from the substantia nigra to the basal ganglia function as the prediction error. Reinforcement learning has been used as a part of the model for human skill learning, especially in relation to the interaction between implicit and explicit learning in skill acquisition (the first publication on this application was in 1995–1996).[25]
+Comparison of reinforcement learning algorithms[edit]
+
+
+Algorithm
+Description
+Model
+Policy
+Action Space
+State Space
+Operator
+
+
+Monte Carlo
+Every visit to Monte Carlo
+Model-Free
+Either
+Discrete
+Discrete
+Sample-means
+
+
+Q-learning
+State–action–reward–state
+Model-Free
+Off-policy
+Discrete
+Discrete
+Q-value
+
+
+SARSA
+State–action–reward–state–action
+Model-Free
+On-policy
+Discrete
+Discrete
+Q-value
+
+
+Q-learning - Lambda
+State–action–reward–state with eligibility traces
+Model-Free
+Off-policy
+Discrete
+Discrete
+Q-value
+
+
+SARSA - Lambda
+State–action–reward–state–action with eligibility traces
+Model-Free
+On-policy
+Discrete
+Discrete
+Q-value
+
+
+DQN
+Deep Q Network
+Model-Free
+Off-policy
+Discrete
+Continuous
+Q-value
+
+
+DDPG
+Deep Deterministic Policy Gradient
+Model-Free
+Off-policy
+Continuous
+Continuous
+Q-value
+
+
+A3C
+Asynchronous Advantage Actor-Critic Algorithm
+Model-Free
+On-policy
+Continuous
+Continuous
+Advantage
+
+
+NAF
+Q-Learning with Normalized Advantage Functions
+Model-Free
+Off-policy
+Continuous
+Continuous
+Advantage
+
+
+TRPO
+Trust Region Policy Optimization
+Model-Free
+On-policy
+Continuous
+Continuous
+Advantage
+
+
+PPO
+Proximal Policy Optimization
+Model-Free
+On-policy
+Continuous
+Continuous
+Advantage
+
+
+TD3
+
+Twin Delayed Deep Deterministic Policy Gradient
+
+Model-Free
+
+Off-policy
+
+Continuous
+
+Continuous
+
+Q-value
+
+
+SAC
+
+Soft Actor-Critic
+
+Model-Free
+
+Off-policy
+
+Continuous
+
+Continuous
+
+Advantage
+
+Deep reinforcement learning[edit]
+This approach extends reinforcement learning by using a deep neural network and without explicitly designing the state space.[26] The work on learning ATARI games by Google DeepMind increased attention to deep reinforcement learning or end-to-end reinforcement learning.[27]
+
+Inverse reinforcement learning[edit]
+In inverse reinforcement learning (IRL), no reward function is given. Instead, the reward function is inferred given an observed behavior from an expert. The idea is to mimic observed behavior, which is often optimal or close to optimal.[28]
+
+Safe Reinforcement Learning[edit]
+Safe Reinforcement Learning (SRL) can be defined as the process of learning policies that maximize the expectation of the return in problems in which it is important to ensure reasonable system performance and/or respect safety constraints during the learning and/or deployment processes.[29]
+
+See also[edit]
+
+Temporal difference learning
+Q-learning
+State–action–reward–state–action (SARSA)
+Fictitious play
+Learning classifier system
+Optimal control
+Dynamic treatment regimes
+Error-driven learning
+Multi-agent system
+Distributed artificial intelligence
+Intrinsic motivation
+Genetic algorithms
+apprenticeship learning
+
+References[edit]
+
+
+^ Kaelbling, Leslie P.; Littman, Michael L.; Moore, Andrew W. (1996). "Reinforcement Learning: A Survey". Journal of Artificial Intelligence Research. 4: 237–285. arXiv:cs/9605103. doi:10.1613/jair.301. S2CID 1708582. Archived from the original on 2001-11-20..mw-parser-output cite.citation{font-style:inherit}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .id-lock-free a,.mw-parser-output .citation .cs1-lock-free a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited a,.mw-parser-output .id-lock-registration a,.mw-parser-output .citation .cs1-lock-limited a,.mw-parser-output .citation .cs1-lock-registration a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription a,.mw-parser-output .citation .cs1-lock-subscription a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-ws-icon a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-maint{display:none;color:#33aa33;margin-left:0.3em}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}
+
+^ van Otterlo, M.; Wiering, M. (2012). Reinforcement learning and markov decision processes. Reinforcement Learning. Adaptation, Learning, and Optimization. 12. pp. 3–42. doi:10.1007/978-3-642-27645-3_1. ISBN 978-3-642-27644-6.
+
+^ Sutton & Barto 1998, Chapter 11.
+
+^ Gosavi, Abhijit (2003). Simulation-based Optimization: Parametric Optimization Techniques and Reinforcement. Operations Research/Computer Science Interfaces Series. Springer. ISBN 978-1-4020-7454-7.
+
+^ a b Burnetas, Apostolos N.; Katehakis, Michael N. (1997), "Optimal adaptive policies for Markov Decision Processes", Mathematics of Operations Research, 22: 222–255, doi:10.1287/moor.22.1.222
+
+^ Tokic, Michel; Palm, Günther (2011), "Value-Difference Based Exploration: Adaptive Control Between Epsilon-Greedy and Softmax" (PDF), KI 2011: Advances in Artificial Intelligence, Lecture Notes in Computer Science, 7006, Springer, pp. 335–346, ISBN 978-3-642-24455-1
+
+^ a b Reinforcement learning: An introduction (PDF).
+
+^ Sutton, Richard S. (1984). Temporal Credit Assignment in Reinforcement Learning (PhD thesis). University of Massachusetts, Amherst, MA.
+
+^ Sutton & Barto 1998, §6. Temporal-Difference Learning.
+
+^ Bradtke, Steven J.; Barto, Andrew G. (1996). "Learning to predict by the method of temporal differences". Machine Learning. 22: 33–57. CiteSeerX 10.1.1.143.857. doi:10.1023/A:1018056104778. S2CID 20327856.
+
+^ Watkins, Christopher J.C.H. (1989). Learning from Delayed Rewards (PDF) (PhD thesis). King’s College, Cambridge, UK.
+
+^ Williams, Ronald J. (1987). "A class of gradient-estimating algorithms for reinforcement learning in neural networks". Proceedings of the IEEE First International Conference on Neural Networks. CiteSeerX 10.1.1.129.8871.
+
+^ Peters, Jan; Vijayakumar, Sethu; Schaal, Stefan (2003). "Reinforcement Learning for Humanoid Robotics" (PDF). IEEE-RAS International Conference on Humanoid Robots.
+
+^ Deisenroth, Marc Peter; Neumann, Gerhard; Peters, Jan (2013). A Survey on Policy Search for Robotics (PDF). Foundations and Trends in Robotics. 2. NOW Publishers. pp. 1–142. doi:10.1561/2300000021. hdl:10044/1/12051.
+
+^ Juliani, Arthur (2016-12-17). "Simple Reinforcement Learning with Tensorflow Part 8: Asynchronous Actor-Critic Agents (A3C)". Medium. Retrieved 2018-02-22.
+
+^ Riveret, Regis; Gao, Yang (2019). "A probabilistic argumentation framework for reinforcement learning agents". Autonomous Agents and Multi-Agent Systems. 33 (1–2): 216–274. doi:10.1007/s10458-019-09404-2. S2CID 71147890.
+
+^ Kulkarni, Tejas D.; Narasimhan, Karthik R.; Saeedi, Ardavan; Tenenbaum, Joshua B. (2016). "Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation". Proceedings of the 30th International Conference on Neural Information Processing Systems. NIPS'16. USA: Curran Associates Inc.: 3682–3690. arXiv:1604.06057. Bibcode:2016arXiv160406057K. ISBN 978-1-5108-3881-9.
+
+^ George Karimpanal, Thommen; Bouffanais, Roland (2019). "Self-organizing maps for storage and transfer of knowledge in reinforcement learning". Adaptive Behavior. 27 (2): 111–126. arXiv:1811.08318. doi:10.1177/1059712318818568. ISSN 1059-7123. S2CID 53774629.
+
+^ "On the Use of Reinforcement Learning for Testing Game Mechanics : ACM - Computers in Entertainment". cie.acm.org. Retrieved 2018-11-27.
+
+^ Kaplan, F. and Oudeyer, P. (2004). Maximizing learning progress: an internal reward system for development. Embodied artificial intelligence, pages 629–629.
+
+^ Klyubin, A., Polani, D., and Nehaniv, C. (2008). Keep your options open: an information-based driving principle for sensorimotor systems. PLOS ONE, 3(12):e4018. doi:10.1371%2Fjournal.pone.0004018
+
+^ Barto, A. G. (2013). “Intrinsic motivation and reinforcement learning,” in Intrinsically Motivated Learning in Natural and Artificial Systems (Berlin; Heidelberg: Springer), 17–47
+
+^ Sun, R., Merrill,E. and Peterson,T.(2001). From implicit skills to explicit knowledge: A bottom-up model of skill learning. Cognitive Science, Vol.25, No.2, pp.203-244.
+
+^ "Reinforcement Learning / Successes of Reinforcement Learning". umichrl.pbworks.com. Retrieved 2017-08-06.
+
+^ [1] Archived 2017-04-26 at the Wayback Machine
+
+^ Francois-Lavet, Vincent;  et al. (2018). "An Introduction to Deep Reinforcement Learning". Foundations and Trends in Machine Learning. 11 (3–4): 219–354. arXiv:1811.12560. Bibcode:2018arXiv181112560F. doi:10.1561/2200000071. S2CID 54434537.
+
+^ Mnih, Volodymyr;  et al. (2015). "Human-level control through deep reinforcement learning". Nature. 518 (7540): 529–533. Bibcode:2015Natur.518..529M. doi:10.1038/nature14236. PMID 25719670. S2CID 205242740.
+
+^ Ng, A. Y.; Russell, S. J. (2000). "Algorithms for Inverse Reinforcement Learning" (PDF). Proceeding ICML '00 Proceedings of the Seventeenth International Conference on Machine Learning. pp. 663–670. ISBN 1-55860-707-2.
+
+^ Horie, Naoto; Matsui, Tohgoroh; Moriyama, Koichi; Mutoh, Atsuko; Inuzuka, Nobuhiro (2019-01-18). "Multi-objective safe reinforcement learning". Artificial Life and Robotics. doi:10.1007/s10015-019-00524-2. ISSN 1433-5298.
+
+
+Further reading[edit]
+Auer, Peter; Jaksch, Thomas; Ortner, Ronald (2010). "Near-optimal regret bounds for reinforcement learning". Journal of Machine Learning Research. 11: 1563–1600.
+Busoniu, Lucian; Babuska, Robert; De Schutter, Bart; Ernst, Damien (2010). Reinforcement Learning and Dynamic Programming using Function Approximators. Taylor & Francis CRC Press. ISBN 978-1-4398-2108-4.
+François-Lavet, Vincent; Henderson, Peter; Islam, Riashat; Bellemare, Marc G.; Pineau, Joelle (2018). "An Introduction to Deep Reinforcement Learning". Foundations and Trends in Machine Learning. 11 (3–4): 219–354. arXiv:1811.12560. Bibcode:2018arXiv181112560F. doi:10.1561/2200000071. S2CID 54434537.
+Powell, Warren (2007). Approximate dynamic programming: solving the curses of dimensionality. Wiley-Interscience. ISBN 978-0-470-17155-4.
+Sutton, Richard S.; Barto, Andrew G. (1998). Reinforcement Learning: An Introduction. MIT Press. ISBN 978-0-262-19398-6.
+Sutton, Richard S. (1988). "Learning to predict by the method of temporal differences". Machine Learning. 3: 9–44. doi:10.1007/BF00115009.
+Szita, Istvan; Szepesvari, Csaba (2010). "Model-based Reinforcement Learning with Nearly Tight Exploration Complexity Bounds" (PDF). ICML 2010. Omnipress. pp. 1031–1038. Archived from the original (PDF) on 2010-07-14.
+External links[edit]
+Reinforcement Learning Repository
+Reinforcement Learning and Artificial Intelligence (RLAI, Rich Sutton's lab at the University of Alberta)
+Autonomous Learning Laboratory (ALL, Andrew Barto's lab at the University of Massachusetts Amherst)
+Hybrid reinforcement learning
+Real-world reinforcement learning experiments at Delft University of Technology
+Stanford University Andrew Ng Lecture on Reinforcement Learning
+Dissecting Reinforcement Learning Series of blog post on RL with Python code
+vteComputer scienceNote: This template roughly follows the 2012 ACM Computing Classification System.Hardware
+Printed circuit board
+Peripheral
+Integrated circuit
+Very Large Scale Integration
+Systems on Chip (SoCs)
+Energy consumption (Green computing)
+Electronic design automation
+Hardware acceleration
+Computer systemsorganization
+Computer architecture
+Embedded system
+Real-time computing
+Dependability
+Networks
+Network architecture
+Network protocol
+Network components
+Network scheduler
+Network performance evaluation
+Network service
+Software organization
+Interpreter
+Middleware
+Virtual machine
+Operating system
+Software quality
+Software notationsand tools
+Programming paradigm
+Programming language
+Compiler
+Domain-specific language
+Modeling language
+Software framework
+Integrated development environment
+Software configuration management
+Software library
+Software repository
+Software development
+Control variable
+Software development process
+Requirements analysis
+Software design
+Software construction
+Software deployment
+Software maintenance
+Programming team
+Open-source model
+Theory of computation
+Model of computation
+Formal language
+Automata theory
+Computability theory
+Computational complexity theory
+Logic
+Semantics
+Algorithms
+Algorithm design
+Analysis of algorithms
+Algorithmic efficiency
+Randomized algorithm
+Computational geometry
+Mathematicsof computing
+Discrete mathematics
+Probability
+Statistics
+Mathematical software
+Information theory
+Mathematical analysis
+Numerical analysis
+Informationsystems
+Database management system
+Information storage systems
+Enterprise information system
+Social information systems
+Geographic information system
+Decision support system
+Process control system
+Multimedia information system
+Data mining
+Digital library
+Computing platform
+Digital marketing
+World Wide Web
+Information retrieval
+Security
+Cryptography
+Formal methods
+Security services
+Intrusion detection system
+Hardware security
+Network security
+Information security
+Application security
+Human–computerinteraction
+Interaction design
+Social computing
+Ubiquitous computing
+Visualization
+Accessibility
+Concurrency
+Concurrent computing
+Parallel computing
+Distributed computing
+Multithreading
+Multiprocessing
+Artificialintelligence
+Natural language processing
+Knowledge representation and reasoning
+Computer vision
+Automated planning and scheduling
+Search methodology
+Control method
+Philosophy of artificial intelligence
+Distributed artificial intelligence
+Machine learning
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Multi-task learning
+Cross-validation
+Graphics
+Animation
+Rendering
+Image manipulation
+Graphics processing unit
+Mixed reality
+Virtual reality
+Image compression
+Solid modeling
+Appliedcomputing
+E-commerce
+Enterprise software
+Computational mathematics
+Computational physics
+Computational chemistry
+Computational biology
+Computational social science
+Computational engineering
+Computational healthcare
+Digital art
+Electronic publishing
+Cyberwarfare
+Electronic voting
+Video games
+Word processing
+Operations research
+Educational technology
+Document management
+
+ Book
+ Category
+ Outline
+WikiProject
+ Commons
+
+
+
+
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Reinforcement_learning&oldid=985770110"
+Categories: Reinforcement learningMarkov modelsBelief revisionHidden categories: Webarchive template wayback linksWikipedia articles needing clarification from July 2018Wikipedia articles needing clarification from January 2020
+
+
+
+
+
+
+Navigation menu
+
+
+
+
+Personal tools
+
+
+Not logged inTalkContributionsCreate accountLog in
+
+
+
+
+
+
+Namespaces
+
+
+ArticleTalk
+
+
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+
+Views
+
+
+ReadEditView history
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsCurrent eventsRandom articleAbout WikipediaContact usDonate
+
+
+
+
+
+Contribute
+
+
+HelpLearn to editCommunity portalRecent changesUpload file
+
+
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this pageWikidata item
+
+
+
+
+
+Print/export
+
+
+Download as PDFPrintable version
+
+
+
+
+
+In other projects
+
+
+Wikimedia Commons
+
+
+
+
+
+Languages
+
+
+العربيةবাংলাБългарскиCatalàČeštinaDeutschEestiΕλληνικάEspañolفارسیFrançais한국어ItalianoעבריתBahasa Melayu日本語Norsk bokmålଓଡ଼ିଆРусскийSimple EnglishSlovenščinaSuomiSvenskaTürkçeУкраїнськаTiếng Việt粵語中文
+Edit links
+
+
+
+
+
+
+ This page was last edited on 27 October 2020, at 21:13 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Mobile view
+Developers
+Statistics
+Cookie statement
+
+
+
+
+
+
+
+(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.748","walltime":"1.049","ppvisitednodes":{"value":2970,"limit":1000000},"postexpandincludesize":{"value":127694,"limit":2097152},"templateargumentsize":{"value":2154,"limit":2097152},"expansiondepth":{"value":13,"limit":40},"expensivefunctioncount":{"value":2,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":99230,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  650.794      1 -total"," 46.34%  301.575      1 Template:Reflist"," 24.80%  161.378     11 Template:Cite_journal","  9.65%   62.796      2 Template:Clarify","  8.62%   56.104      2 Template:Fix-span","  8.31%   54.090      8 Template:Cite_book","  7.31%   47.554      2 Template:Sfn","  6.80%   44.264      1 Template:Machine_learning_bar","  6.28%   40.872      1 Template:Sidebar_with_collapsible_lists","  5.53%   35.979      4 Template:Category_handler"]},"scribunto":{"limitreport-timeusage":{"value":"0.326","limit":"10.000"},"limitreport-memusage":{"value":7663598,"limit":52428800},"limitreport-logs":"anchor_id_list = table#1 {\n  [\"CITEREFAuerJakschOrtner2010\"] = 1,\n  [\"CITEREFBradtkeBarto1996\"] = 1,\n  [\"CITEREFBurnetasKatehakis1997\"] = 1,\n  [\"CITEREFBusoniuBabuskaDe_SchutterErnst2010\"] = 1,\n  [\"CITEREFDeisenrothNeumannPeters2013\"] = 1,\n  [\"CITEREFFrancois-Lavet2018\"] = 1,\n  [\"CITEREFFrançois-LavetHendersonIslamBellemare2018\"] = 1,\n  [\"CITEREFGeorge_KarimpanalBouffanais2019\"] = 1,\n  [\"CITEREFGosavi2003\"] = 1,\n  [\"CITEREFHorieMatsuiMoriyamaMutoh2019\"] = 1,\n  [\"CITEREFJuliani2016\"] = 1,\n  [\"CITEREFKaelblingLittmanMoore1996\"] = 1,\n  [\"CITEREFKulkarniNarasimhanSaeediTenenbaum2016\"] = 1,\n  [\"CITEREFMnih2015\"] = 1,\n  [\"CITEREFNgRussell2000\"] = 1,\n  [\"CITEREFPetersVijayakumarSchaal2003\"] = 1,\n  [\"CITEREFPowell2007\"] = 1,\n  [\"CITEREFRiveretGao2019\"] = 1,\n  [\"CITEREFSutton1984\"] = 1,\n  [\"CITEREFSutton1988\"] = 1,\n  [\"CITEREFSuttonBarto1998\"] = 1,\n  [\"CITEREFSzitaSzepesvari2010\"] = 1,\n  [\"CITEREFTokicPalm2011\"] = 1,\n  [\"CITEREFWatkins1989\"] = 1,\n  [\"CITEREFWilliams1987\"] = 1,\n  [\"CITEREFvan_Otterlo,_M.Wiering,_M.2012\"] = 1,\n}\ntemplate_list = table#1 {\n  [\"Citation\"] = 2,\n  [\"Cite book\"] = 8,\n  [\"Cite conference\"] = 3,\n  [\"Cite journal\"] = 11,\n  [\"Cite thesis\"] = 2,\n  [\"Cite web\"] = 3,\n  [\"Clarify\"] = 2,\n  [\"Computer science\"] = 1,\n  [\"Div col\"] = 1,\n  [\"Div col end\"] = 1,\n  [\"Doi\"] = 1,\n  [\"For\"] = 1,\n  [\"Machine learning bar\"] = 1,\n  [\"Main\"] = 1,\n  [\"Mvar\"] = 3,\n  [\"Reflist\"] = 1,\n  [\"Rp\"] = 2,\n  [\"See also\"] = 1,\n  [\"Sfn\"] = 2,\n  [\"Toclimit\"] = 1,\n  [\"Webarchive\"] = 1,\n}\narticle_whitelist = table#1 {\n}\n"},"cachereport":{"origin":"mw1271","timestamp":"20201029210913","ttl":2592000,"transientcontent":false}}});});
+{"@context":"https:\/\/schema.org","@type":"Article","name":"Reinforcement learning","url":"https:\/\/en.wikipedia.org\/wiki\/Reinforcement_learning","sameAs":"http:\/\/www.wikidata.org\/entity\/Q830687","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q830687","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2002-07-31T13:24:55Z","dateModified":"2020-10-27T21:13:04Z","headline":"field of machine learning"}
+(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":162,"wgHostname":"mw1320"});});

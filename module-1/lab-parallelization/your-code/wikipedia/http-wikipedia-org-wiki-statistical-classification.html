@@ -1,0 +1,718 @@
+
+
+
+
+Statistical classification - Wikipedia
+document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"70c4b777-3459-4aa2-a6aa-22d903447b7c","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Statistical_classification","wgTitle":"Statistical classification","wgCurRevisionId":984514201,"wgRevisionId":984514201,"wgArticleId":1579244,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles with short description","Short description matches Wikidata","Articles lacking in-text citations from January 2010","All articles lacking in-text citations","Commons category link from Wikidata","Statistical classification","Machine learning",
+"Classification algorithms"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Statistical_classification","wgRelevantArticleId":1579244,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage","wgWikibaseItemId":"Q1744628"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":
+"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","skins.vector.styles.legacy":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.toc.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","ext.math.scripts","ext.scribunto.logs","site","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","skins.vector.legacy.js","ext.gadget.ReferenceTooltips","ext.gadget.charinsert","ext.gadget.extra-toolbar-buttons","ext.gadget.refToolbar","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.quicksurveys.init",
+"ext.centralNotice.geoIP","ext.centralNotice.startUp"];
+(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Statistical classification
+
+From Wikipedia, the free encyclopedia
+
+
+
+Jump to navigation
+Jump to search
+For the unsupervised learning approach, see Cluster analysis.
+Term in statistical learning
+In statistics, classification is the problem of identifying to which of a set of categories (sub-populations) a new observation belongs, on the basis of a training set of data containing observations (or instances) whose category membership is known.  Examples are assigning a given email to the "spam" or "non-spam" class, and assigning a diagnosis to a given patient based on observed characteristics of the patient (sex, blood pressure, presence or absence of certain symptoms, etc.).  Classification is an example of pattern recognition.
+In the terminology of machine learning,[1] classification is considered an instance of supervised learning, i.e., learning where a training set of correctly identified observations is available.  The corresponding unsupervised procedure is known as clustering, and involves grouping data into categories based on some measure of inherent similarity or distance.
+Often, the individual observations are analyzed into a set of quantifiable properties, known variously as explanatory variables or features.  These properties may variously be categorical (e.g. "A", "B", "AB" or "O", for blood type), ordinal (e.g. "large", "medium" or "small"), integer-valued (e.g. the number of occurrences of a particular word in an email) or real-valued (e.g. a measurement of blood pressure). Other classifiers work by comparing observations to previous observations by means of a similarity or distance function.
+An algorithm that implements classification, especially in a concrete implementation, is known as a classifier.  The term "classifier" sometimes also refers to the mathematical function, implemented by a classification algorithm, that maps input data to a category.
+Terminology across fields is quite varied. In statistics, where classification is often done with logistic regression or a similar procedure, the properties of observations are termed explanatory variables (or independent variables, regressors, etc.), and the categories to be predicted are known as outcomes, which are considered to be possible values of the dependent variable.  In machine learning, the observations are often known as instances, the explanatory variables are termed features (grouped into a feature vector), and the possible categories to be predicted are classes.  Other fields may use different terminology: e.g. in community ecology, the term "classification" normally refers to cluster analysis, i.e., a type of unsupervised learning, rather than the supervised learning described in this article.
+
+Contents
+
+1 Relation to other problems
+2 Frequentist procedures
+3 Bayesian procedures
+4 Binary and multiclass classification
+5 Feature vectors
+6 Linear classifiers
+7 Algorithms
+8 Evaluation
+9 Application domains
+10 See also
+11 References
+
+
+Relation to other problems[edit]
+Classification and clustering are examples of the more general problem of pattern recognition, which is the assignment of some sort of output value to a given input value.  Other examples are regression, which assigns a real-valued output to each input; sequence labeling, which assigns a class to each member of a sequence of values (for example, part of speech tagging, which assigns a part of speech to each word in an input sentence); parsing, which assigns a parse tree to an input sentence, describing the syntactic structure of the sentence; etc.
+A common subclass of classification is probabilistic classification.  Algorithms of this nature use statistical inference to find the best class for a given instance.  Unlike other algorithms, which simply output a "best" class, probabilistic algorithms output a probability of the instance being a member of each of the possible classes.  The best class is normally then selected as the one with the highest probability.  However, such an algorithm has numerous advantages over non-probabilistic classifiers:
+
+It can output a confidence value associated with its choice (in general, a classifier that can do this is known as a confidence-weighted classifier).
+Correspondingly, it can abstain when its confidence of choosing any particular output is too low.
+Because of the probabilities which are generated, probabilistic classifiers can be more effectively incorporated into larger machine-learning tasks, in a way that partially or completely avoids the problem of error propagation.
+Frequentist procedures[edit]
+Early work on statistical classification was undertaken by Fisher,[2][3] in the context of two-group problems, leading to Fisher's linear discriminant function as the rule for assigning a group to a new observation.[4] This early work assumed that data-values within each of the two groups had a multivariate normal distribution. The extension of this same context to more than two-groups has also been considered with a restriction imposed that the classification rule should be linear.[4][5] Later work for the multivariate normal distribution allowed the classifier to be nonlinear:[6] several classification rules can be derived based on different adjustments of the Mahalanobis distance, with a new observation being assigned to the group whose centre has the lowest adjusted distance from the observation.
+
+Bayesian procedures[edit]
+Unlike frequentist procedures, Bayesian classification procedures provide a natural way of taking into account any available information about the relative sizes of the different groups within the overall population.[7] Bayesian procedures tend to be computationally expensive and, in the days before Markov chain Monte Carlo computations were developed, approximations for Bayesian clustering rules were devised.[8]
+Some Bayesian procedures involve the calculation of  group membership probabilities: these can be viewed as providing a more informative outcome of a data analysis than a simple attribution of a single group-label to each new observation.
+
+Binary and multiclass classification[edit]
+Classification can be thought of as two separate problems – binary classification and multiclass classification. In binary classification, a better understood task, only two classes are involved, whereas multiclass classification involves assigning an object to one of several classes.[9] Since many classification methods have been developed specifically for binary classification, multiclass classification often requires the combined use of multiple binary classifiers.
+
+Feature vectors[edit]
+Most algorithms describe an individual instance whose category is to be predicted using a feature vector of individual, measurable properties of the instance.  Each property is termed a feature, also known in statistics as an explanatory variable (or independent variable, although features may or may not be statistically independent).  Features may variously be binary (e.g. "on" or "off"); categorical (e.g. "A", "B", "AB" or "O", for blood type); ordinal (e.g. "large", "medium" or "small"); integer-valued (e.g. the number of occurrences of a particular word in an email); or real-valued (e.g. a measurement of blood pressure).  If the instance is an image, the feature values might correspond to the pixels of an image; if the instance is a piece of text, the feature values might be occurrence frequencies of different words.  Some algorithms work only in terms of discrete data and require that real-valued or integer-valued data be discretized into groups (e.g. less than 5, between 5 and 10, or greater than 10).
+
+Linear classifiers[edit]
+Main article: Linear classifier
+A large number of algorithms for classification can be phrased in terms of a linear function that assigns a score to each possible category k by combining the feature vector of an instance with a vector of weights, using a dot product.  The predicted category is the one with the highest score.  This type of score function is known as a linear predictor function and has the following general form:
+
+
+
+
+
+score
+⁡
+(
+
+
+X
+
+
+i
+
+
+,
+k
+)
+=
+
+
+β
+
+
+k
+
+
+⋅
+
+
+X
+
+
+i
+
+
+,
+
+
+{\displaystyle \operatorname {score} (\mathbf {X} _{i},k)={\boldsymbol {\beta }}_{k}\cdot \mathbf {X} _{i},}
+
+
+where Xi is the feature vector for instance i, βk is the vector of weights corresponding to category k, and score(Xi, k) is the score associated with assigning instance i to category k.  In discrete choice theory, where instances represent people and categories represent choices, the score is considered the utility associated with person i choosing category k.
+Algorithms with this basic setup are known as linear classifiers.  What distinguishes them is the procedure for determining (training) the optimal weights/coefficients and the way that the score is interpreted.
+Examples of such algorithms are
+
+Logistic regression and Multinomial logistic regression
+Probit regression
+The perceptron algorithm
+Support vector machines
+Linear discriminant analysis.
+Algorithms[edit]
+In unsupervised learning, classifiers form the backbone of cluster analysis and in supervised or semi-supervised learning, classifiers are how the system characterizes and evaluates unlabeled data. In all cases though, classifiers have a specific set of dynamic rules, which includes an interpretation procedure to handle vague or unknown values, all tailored to the type of inputs being examined.[10]
+Since no single form of classification is appropriate for all data sets, a large toolkit of classification algorithms have been developed. The most commonly used include:[11]
+
+Linear classifiers
+Fisher's linear discriminant
+Logistic regression
+Naive Bayes classifier
+Perceptron
+Support vector machines
+Least squares support vector machines
+Quadratic classifiers
+Kernel estimation
+k-nearest neighbor
+Boosting (meta-algorithm)
+Decision trees
+Random forests
+Neural networks
+Learning vector quantization
+Evaluation[edit]
+Classifier performance depends greatly on the characteristics of the data to be classified. There is no single classifier that works best on all given problems (a phenomenon that may be explained by the no-free-lunch theorem). Various empirical tests have been performed to compare classifier performance and to find the characteristics of data that determine classifier performance. Determining a suitable classifier for a given problem is however still more an art than a science.
+The measures precision and recall are popular metrics used to evaluate the quality of a classification system. More recently, receiver operating characteristic (ROC) curves have been used to evaluate the tradeoff between true- and false-positive rates of classification algorithms.
+As a performance metric, the uncertainty coefficient has the advantage over simple accuracy in that it is not affected by the relative sizes of the different classes.
+[12]
+Further, it will not penalize an algorithm for simply rearranging the classes.
+
+Application domains[edit]
+See also: Cluster analysis § Applications
+Classification has many applications. In some of these it is employed as a data mining procedure, while in others more detailed statistical modeling is undertaken.
+
+Computer vision
+Medical imaging and medical image analysis
+Optical character recognition
+Video tracking
+Drug discovery and development
+Toxicogenomics
+Quantitative structure-activity relationship
+Geostatistics
+Speech recognition
+Handwriting recognition
+Biometric identification
+Biological classification
+Statistical natural language processing
+Document classification
+Internet search engines
+Credit scoring
+Pattern recognition
+Recommender system
+Micro-array classification
+This article includes a list of general references, but it remains largely unverified because it lacks sufficient corresponding inline citations. Please help to improve this article by introducing more precise citations. (January 2010) (Learn how and when to remove this template message)
+See also[edit]
+
+
+
+Wikimedia Commons has media related to Statistical classification.
+
+.mw-parser-output .portal{border:solid #aaa 1px;padding:0}.mw-parser-output .portal.tleft{margin:0.5em 1em 0.5em 0}.mw-parser-output .portal.tright{margin:0.5em 0 0.5em 1em}.mw-parser-output .portal>ul{display:table;box-sizing:border-box;padding:0.1em;max-width:175px;background:#f9f9f9;font-size:85%;line-height:110%;font-style:italic;font-weight:bold}.mw-parser-output .portal>ul>li{display:table-row}.mw-parser-output .portal>ul>li>span:first-child{display:table-cell;padding:0.2em;vertical-align:middle;text-align:center}.mw-parser-output .portal>ul>li>span:last-child{display:table-cell;padding:0.2em 0.2em 0.2em 0.3em;vertical-align:middle}
+
+Mathematics portal
+
+Artificial intelligence
+Binary classification
+Class membership probabilities
+Classification rule
+Compound term processing
+Data mining
+Data warehouse
+Fuzzy logic
+Information retrieval
+List of datasets for machine learning research
+Machine learning
+Recommender system
+
+References[edit]
+
+
+^ Alpaydin, Ethem (2010). Introduction to Machine Learning. MIT Press. p. 9. ISBN 978-0-262-01243-0..mw-parser-output cite.citation{font-style:inherit}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .id-lock-free a,.mw-parser-output .citation .cs1-lock-free a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited a,.mw-parser-output .id-lock-registration a,.mw-parser-output .citation .cs1-lock-limited a,.mw-parser-output .citation .cs1-lock-registration a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription a,.mw-parser-output .citation .cs1-lock-subscription a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-ws-icon a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-maint{display:none;color:#33aa33;margin-left:0.3em}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}
+
+^ Fisher, R. A. (1936). "The Use of Multiple Measurements in Taxonomic Problems". Annals of Eugenics. 7 (2): 179–188. doi:10.1111/j.1469-1809.1936.tb02137.x. hdl:2440/15227.
+
+^ Fisher, R. A. (1938). "The Statistical Utilization of Multiple Measurements". Annals of Eugenics. 8 (4): 376–386. doi:10.1111/j.1469-1809.1938.tb02189.x. hdl:2440/15232.
+
+^ a b Gnanadesikan, R. (1977) Methods for Statistical Data Analysis of Multivariate Observations, Wiley. ISBN 0-471-30845-5 (p. 83–86)
+
+^ Rao, C.R. (1952) Advanced Statistical Methods in Multivariate Analysis, Wiley. (Section 9c)
+
+^ Anderson, T.W. (1958) An Introduction to Multivariate Statistical Analysis, Wiley.
+
+^ Binder, D. A. (1978). "Bayesian cluster analysis". Biometrika. 65: 31–38. doi:10.1093/biomet/65.1.31.
+
+^ Binder, David A. (1981). "Approximations to Bayesian clustering rules". Biometrika. 68: 275–285. doi:10.1093/biomet/68.1.275.
+
+^ Har-Peled, S., Roth, D., Zimak, D. (2003) "Constraint Classification for Multiclass Classification and Ranking." In: Becker, B., Thrun, S., Obermayer, K. (Eds) Advances in Neural Information Processing Systems 15: Proceedings of the 2002 Conference, MIT Press. ISBN 0-262-02550-7
+
+^ "What is a Classifier in Machine Learning?".
+
+^ "A Tour of The Top 10 Algorithms for Machine Learning Newbies". Built In. 2018-01-20. Retrieved 2019-06-10.
+
+^ 
+Peter Mills (2011). "Efficient statistical classification of satellite measurements". International Journal of Remote Sensing. 32 (21): 6109–6132. arXiv:1202.2194. Bibcode:2011IJRS...32.6109M. doi:10.1080/01431161.2010.507795. S2CID 88518570.
+
+
+vteStatistics
+Outline
+Index
+Descriptive statisticsContinuous dataCenter
+Mean
+arithmetic
+geometric
+harmonic
+Median
+Mode
+Dispersion
+Variance
+Standard deviation
+Coefficient of variation
+Percentile
+Range
+Interquartile range
+Shape
+Central limit theorem
+Moments
+Skewness
+Kurtosis
+L-moments
+Count data
+Index of dispersion
+Summary tables
+Grouped data
+Frequency distribution
+Contingency table
+Dependence
+Pearson product-moment correlation
+Rank correlation
+Spearman's ρ
+Kendall's τ
+Partial correlation
+Scatter plot
+Graphics
+Bar chart
+Biplot
+Box plot
+Control chart
+Correlogram
+Fan chart
+Forest plot
+Histogram
+Pie chart
+Q–Q plot
+Run chart
+Scatter plot
+Stem-and-leaf display
+Radar chart
+Violin plot
+Data collectionStudy design
+Population
+Statistic
+Effect size
+Statistical power
+Optimal design
+Sample size determination
+Replication
+Missing data
+Survey methodology
+Sampling
+stratified
+cluster
+Standard error
+Opinion poll
+Questionnaire
+Controlled experiments
+Scientific control
+Randomized experiment
+Randomized controlled trial
+Random assignment
+Blocking
+Interaction
+Factorial experiment
+Adaptive Designs
+Adaptive clinical trial
+Up-and-Down Designs
+Stochastic approximation
+Observational Studies
+Cross-sectional study
+Cohort study
+Natural experiment
+Quasi-experiment
+Statistical inferenceStatistical theory
+Population
+Statistic
+Probability distribution
+Sampling distribution
+Order statistic
+Empirical distribution
+Density estimation
+Statistical model
+Model specification
+Lp space
+Parameter
+location
+scale
+shape
+Parametric family
+Likelihood (monotone)
+Location–scale family
+Exponential family
+Completeness
+Sufficiency
+Statistical functional
+Bootstrap
+U
+V
+Optimal decision
+loss function
+Efficiency
+Statistical distance
+divergence
+Asymptotics
+Robustness
+Frequentist inferencePoint estimation
+Estimating equations
+Maximum likelihood
+Method of moments
+M-estimator
+Minimum distance
+Unbiased estimators
+Mean-unbiased minimum-variance
+Rao–Blackwellization
+Lehmann–Scheffé theorem
+Median unbiased
+Plug-in
+Interval estimation
+Confidence interval
+Pivot
+Likelihood interval
+Prediction interval
+Tolerance interval
+Resampling
+Bootstrap
+Jackknife
+Testing hypotheses
+1- & 2-tails
+Power
+Uniformly most powerful test
+Permutation test
+Randomization test
+Multiple comparisons
+Parametric tests
+Likelihood-ratio
+Score/Lagrange multiplier
+Wald
+Specific tests
+Z-test (normal)
+Student's t-test
+F-test
+Goodness of fit
+Chi-squared
+G-test
+Kolmogorov–Smirnov
+Anderson–Darling
+Lilliefors
+Jarque–Bera
+Normality (Shapiro–Wilk)
+Likelihood-ratio test
+Model selection
+Cross validation
+AIC
+BIC
+Rank statistics
+Sign
+Sample median
+Signed rank (Wilcoxon)
+Hodges–Lehmann estimator
+Rank sum (Mann–Whitney)
+Nonparametric anova
+1-way (Kruskal–Wallis)
+2-way (Friedman)
+Ordered alternative (Jonckheere–Terpstra)
+Bayesian inference
+Bayesian probability
+prior
+posterior
+Credible interval
+Bayes factor
+Bayesian estimator
+Maximum posterior estimator
+CorrelationRegression analysisCorrelation
+Pearson product-moment
+Partial correlation
+Confounding variable
+Coefficient of determination
+Regression analysis
+Errors and residuals
+Regression validation
+Mixed effects models
+Simultaneous equations models
+Multivariate adaptive regression splines (MARS)
+Linear regression
+Simple linear regression
+Ordinary least squares
+General linear model
+Bayesian regression
+Non-standard predictors
+Nonlinear regression
+Nonparametric
+Semiparametric
+Isotonic
+Robust
+Heteroscedasticity
+Homoscedasticity
+Generalized linear model
+Exponential families
+Logistic (Bernoulli) / Binomial / Poisson regressions
+Partition of variance
+Analysis of variance (ANOVA, anova)
+Analysis of covariance
+Multivariate ANOVA
+Degrees of freedom
+Categorical / Multivariate / Time-series / Survival analysisCategorical
+Cohen's kappa
+Contingency table
+Graphical model
+Log-linear model
+McNemar's test
+Multivariate
+Regression
+Manova
+Principal components
+Canonical correlation
+Discriminant analysis
+Cluster analysis
+Classification
+Structural equation model
+Factor analysis
+Multivariate distributions
+Elliptical distributions
+Normal
+Time-seriesGeneral
+Decomposition
+Trend
+Stationarity
+Seasonal adjustment
+Exponential smoothing
+Cointegration
+Structural break
+Granger causality
+Specific tests
+Dickey–Fuller
+Johansen
+Q-statistic (Ljung–Box)
+Durbin–Watson
+Breusch–Godfrey
+Time domain
+Autocorrelation (ACF)
+partial (PACF)
+Cross-correlation (XCF)
+ARMA model
+ARIMA model (Box–Jenkins)
+Autoregressive conditional heteroskedasticity (ARCH)
+Vector autoregression (VAR)
+Frequency domain
+Spectral density estimation
+Fourier analysis
+Wavelet
+Whittle likelihood
+SurvivalSurvival function
+Kaplan–Meier estimator (product limit)
+Proportional hazards models
+Accelerated failure time (AFT) model
+First hitting time
+Hazard function
+Nelson–Aalen estimator
+Test
+Log-rank test
+ApplicationsBiostatistics
+Bioinformatics
+Clinical trials / studies
+Epidemiology
+Medical statistics
+Engineering statistics
+Chemometrics
+Methods engineering
+Probabilistic design
+Process / quality control
+Reliability
+System identification
+Social statistics
+Actuarial science
+Census
+Crime statistics
+Demography
+Econometrics
+Jurimetrics
+National accounts
+Official statistics
+Population statistics
+Psychometrics
+Spatial statistics
+Cartography
+Environmental statistics
+Geographic information system
+Geostatistics
+Kriging
+
+Category
+ Mathematics portal
+Commons
+ WikiProject
+
+
+
+
+
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Statistical_classification&oldid=984514201"
+Categories: Statistical classificationMachine learningClassification algorithmsHidden categories: Articles with short descriptionShort description matches WikidataArticles lacking in-text citations from January 2010All articles lacking in-text citationsCommons category link from Wikidata
+
+
+
+
+
+
+Navigation menu
+
+
+
+
+Personal tools
+
+
+Not logged inTalkContributionsCreate accountLog in
+
+
+
+
+
+
+Namespaces
+
+
+ArticleTalk
+
+
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+
+Views
+
+
+ReadEditView history
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsCurrent eventsRandom articleAbout WikipediaContact usDonate
+
+
+
+
+
+Contribute
+
+
+HelpLearn to editCommunity portalRecent changesUpload file
+
+
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this pageWikidata item
+
+
+
+
+
+Print/export
+
+
+Download as PDFPrintable version
+
+
+
+
+
+In other projects
+
+
+Wikimedia Commons
+
+
+
+
+
+Languages
+
+
+العربيةAzərbaycancaБългарскиČeštinaDeutschΕλληνικάEspañolفارسیFrançais한국어ՀայերենBahasa IndonesiaItalianoעבריתLietuviųBahasa Melayu日本語ଓଡ଼ିଆPolskiPortuguêsРусскийکوردیไทยTürkçeУкраїнськаTiếng Việt粵語中文
+Edit links
+
+
+
+
+
+
+ This page was last edited on 20 October 2020, at 13:56 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Mobile view
+Developers
+Statistics
+Cookie statement
+
+
+
+
+
+
+
+(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.500","walltime":"0.679","ppvisitednodes":{"value":2264,"limit":1000000},"postexpandincludesize":{"value":176253,"limit":2097152},"templateargumentsize":{"value":2479,"limit":2097152},"expansiondepth":{"value":16,"limit":40},"expensivefunctioncount":{"value":2,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":32907,"limit":5000000},"entityaccesscount":{"value":1,"limit":400},"timingprofile":["100.00%  542.636      1 -total"," 38.43%  208.513      1 Template:Reflist"," 17.18%   93.212      1 Template:Cite_book"," 16.59%   89.999      1 Template:Statistics"," 15.84%   85.964      1 Template:Navbox_with_collapsible_groups"," 10.91%   59.205      1 Template:Commons_category"," 10.22%   55.455      1 Template:Sister_project","  9.63%   52.247     11 Template:Navbox","  9.42%   51.130      1 Template:Side_box","  8.76%   47.518      1 Template:More_footnotes"]},"scribunto":{"limitreport-timeusage":{"value":"0.234","limit":"10.000"},"limitreport-memusage":{"value":6755581,"limit":52428800},"limitreport-logs":"table#1 {\n}\n"},"cachereport":{"origin":"mw2328","timestamp":"20201020135654","ttl":2592000,"transientcontent":false}}});});
+{"@context":"https:\/\/schema.org","@type":"Article","name":"Statistical classification","url":"https:\/\/en.wikipedia.org\/wiki\/Statistical_classification","sameAs":"http:\/\/www.wikidata.org\/entity\/Q1744628","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q1744628","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2005-03-07T11:38:05Z","dateModified":"2020-10-20T13:56:49Z","headline":"term in statistical learning"}
+(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":188,"wgHostname":"mw1333"});});
